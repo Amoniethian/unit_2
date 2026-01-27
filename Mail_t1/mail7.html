@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CORPMAIL - 邮件详情</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    if (sessionStorage.getItem('mail-auth') !== 'true') {
+      window.location.href = 'index.html';
+    }
+  </script>
+</head>
+<body class="crt">
+  <div class="mail-detail">
+    <div class="mail-detail-header">
+      <h2 class="mail-detail-subject">⭐ 警告</h2>
+      <div class="mail-detail-meta">
+        <p><strong>发件人:</strong> wang.lei@corp-internal.net</p>
+        <p><strong>收件人:</strong> user_4712@corp-internal.net</p>
+        <p><strong>日期:</strong> 2019-11-22 23:15:07</p>
+        <p><strong>状态:</strong> 未读 ⭐ 已标记</p>
+      </div>
+    </div>
+
+    <div class="mail-detail-body" style="color:#ff6600;">
+你以为删掉那段录像就没事了？
+
+我全都知道。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+那五分钟里发生了什么，你比谁都清楚。
+
+我有证据。
+我有录音。
+我知道你做了什么。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+今晚，到那个房间来。
+
+我们了结这一切。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+—— L
+    </div>
+
+    <a href="inbox.html" class="back-btn">← 返回收件箱</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+/* 基础重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f6f6f6;
+  color: #202122;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* Wiki容器 */
+.wiki-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* 头部 */
+.wiki-header {
+  background: #f8f9fa;
+  padding: 15px 20px;
+  border-bottom: 1px solid #a2a9b1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo h1 {
+  font-size: 24px;
+  color: #000;
+  font-weight: normal;
+}
+
+.logo .tagline {
+  font-size: 12px;
+  color: #54595d;
+}
+
+.search-bar {
+  display: flex;
+  gap: 5px;
+}
+
+.search-bar input {
+  padding: 8px 12px;
+  border: 1px solid #a2a9b1;
+  border-radius: 2px;
+  width: 250px;
+  font-size: 14px;
+}
+
+.search-bar button {
+  padding: 8px 15px;
+  background: #f8f9fa;
+  border: 1px solid #a2a9b1;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background: #eaecf0;
+}
+
+/* 导航 */
+.wiki-nav {
+  padding: 10px 20px;
+  font-size: 12px;
+  color: #54595d;
+  border-bottom: 1px solid #eaecf0;
+}
+
+.wiki-nav .current {
+  color: #000;
+}
+
+/* 主内容 */
+.wiki-content {
+  padding: 20px;
+}
+
+/* 警告框 */
+.article-warning {
+  background: #fef6e7;
+  border: 1px solid #fc3;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.article-warning p {
+  margin: 3px 0;
+}
+
+/* 文章 */
+article h1 {
+  font-size: 28px;
+  font-weight: normal;
+  border-bottom: 1px solid #a2a9b1;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.article-meta {
+  font-size: 12px;
+  color: #54595d;
+  margin-bottom: 20px;
+}
+
+.article-meta span {
+  margin-right: 20px;
+}
+
+article h2 {
+  font-size: 20px;
+  font-weight: normal;
+  border-bottom: 1px solid #eaecf0;
+  padding-bottom: 5px;
+  margin: 25px 0 15px 0;
+}
+
+article p {
+  margin: 10px 0;
+}
+
+article ul {
+  margin: 10px 0 10px 30px;
+}
+
+article li {
+  margin: 5px 0;
+}
+
+/* 信息表格 */
+.info-table {
+  border-collapse: collapse;
+  margin: 15px 0;
+  background: #f8f9fa;
+}
+
+.info-table td {
+  border: 1px solid #a2a9b1;
+  padding: 8px 12px;
+}
+
+.info-table td:first-child {
+  background: #eaecf0;
+  font-weight: bold;
+  width: 120px;
+}
+
+/* 操作按钮 */
+.article-actions {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eaecf0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.article-actions button {
+  padding: 10px 20px;
+  background: #f8f9fa;
+  border: 1px solid #a2a9b1;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.article-actions button:hover {
+  background: #eaecf0;
+}
+
+/* 页脚 */
+.article-footer {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #eaecf0;
+  font-size: 12px;
+  color: #54595d;
+}
+
+/* ============== 编辑历史页面 ============== */
+
+.history-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.history-header {
+  border-bottom: 2px solid #c8ccd1;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.history-header h1 {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.version-box {
+  background: #fff3f3;
+  border: 2px solid #ff0000;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.version-box.deleted {
+  background: #1a1a1a;
+  color: #00ff00;
+  border-color: #00ff00;
+  font-family: 'Courier New', monospace;
+}
+
+.version-box h2 {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid currentColor;
+}
+
+.version-meta {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-bottom: 15px;
+}
+
+.version-content {
+  line-height: 1.8;
+}
+
+.version-content p {
+  margin: 10px 0;
+}
+
+.highlight {
+  background: #ffff00;
+  color: #000;
+  padding: 2px 5px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #0645ad;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* ============== 讨论页样式 ============== */
+
+.discussion-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #1a1a1a;
+  color: #ccc;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Courier New', monospace;
+}
+
+.discussion-header {
+  border-bottom: 1px solid #444;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.discussion-header h1 {
+  color: #fff;
+  font-size: 20px;
+}
+
+.comment {
+  border: 1px solid #333;
+  margin-bottom: 15px;
+  background: #222;
+}
+
+.comment-header {
+  background: #2a2a2a;
+  padding: 10px 15px;
+  font-size: 12px;
+  border-bottom: 1px solid #333;
+}
+
+.comment-header .user {
+  color: #6cf;
+}
+
+.comment-header .time {
+  color: #888;
+  float: right;
+}
+
+.comment-body {
+  padding: 15px;
+  line-height: 1.8;
+}
+
+.comment.deleted {
+  opacity: 0.6;
+}
+
+.comment.deleted .comment-body {
+  color: #ff6666;
+  font-style: italic;
+}
+
+.comment.admin .comment-header {
+  background: #3a2a2a;
+}
+
+.comment.admin .user {
+  color: #f66;
+}
+
+.clue {
+  color: #ff0;
+  background: #333;
+  padding: 2px 5px;
+}

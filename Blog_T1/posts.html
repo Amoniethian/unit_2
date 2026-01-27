@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEADDROP - Posts</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    if (sessionStorage.getItem('blog-auth') !== 'true') {
+      window.location.href = 'index.html';
+    }
+  </script>
+</head>
+<body class="crt" style="display:block;">
+  <div class="posts-container">
+    <div class="posts-header">
+      <h1>&gt; DEADDROP - 匿名投稿</h1>
+      <p class="welcome">
+        欢迎回来，匿名用户 |
+        <a href="#" onclick="blogLogout()" style="color:#ff6600;">[ 登出 ]</a>
+      </p>
+    </div>
+
+    <ul class="post-list">
+      <!-- 置顶文章 -->
+      <li>
+        <a href="post1.html" class="post-item pinned">
+          <div class="post-meta">
+            发布时间: 2019-09-20 | 阅读量: [已屏蔽]
+            <span class="post-tag">置顶</span>
+          </div>
+          <div class="post-title">关于"九一五天台事件"的匿名爆料</div>
+          <div class="post-preview">我是当晚在场的人之一。我决定说出真相...</div>
+        </a>
+      </li>
+
+      <!-- 新文章 -->
+      <li>
+        <a href="post2.html" class="post-item">
+          <div class="post-meta">
+            发布时间: 2019-11-22 23:59 | 阅读量: 1
+            <span class="post-tag" style="color:#ff0000; border-color:#ff0000;">阅后即焚</span>
+          </div>
+          <div class="post-title">一个幸存者的自白</div>
+          <div class="post-preview">如果你在读这篇文章，说明我的计划成功了...</div>
+        </a>
+      </li>
+
+      <!-- 公开文章 -->
+      <li>
+        <a href="#" class="post-item" onclick="alert('此文章暂无详细内容'); return false;">
+          <div class="post-meta">
+            发布时间: 2019-09-19 | 阅读量: 2,847
+            <span class="post-tag">公开</span>
+          </div>
+          <div class="post-title">某公司疑似篡改内部Wiki记录</div>
+          <div class="post-preview">有网友爆料，某公司在一起事故后大规模修改内部知识库...</div>
+        </a>
+      </li>
+    </ul>
+
+    <div style="margin-top:40px; padding:15px; border:1px solid #333; font-size:12px; color:#666;">
+      <p>&gt; 所有投稿均为匿名发布</p>
+      <p>&gt; 平台不对内容真实性负责</p>
+      <p>&gt; 请自行判断信息可信度</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

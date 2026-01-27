@@ -1,0 +1,397 @@
+/* 基础重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 暗网/黑客美学 */
+body {
+  background: #0a0a0a;
+  color: #00ff00;
+  font-family: 'Courier New', Monaco, monospace;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* CRT扫描线效果 */
+.crt::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.15) 2px,
+    rgba(0, 0, 0, 0.15) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* 容器 */
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* 终端窗口 */
+.terminal {
+  background: #0d0d0d;
+  border: 2px solid #00ff00;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.2),
+              inset 0 0 50px rgba(0, 255, 0, 0.05);
+}
+
+.terminal-header {
+  background: #1a1a1a;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #333;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27ca40; }
+
+.terminal-header .title {
+  margin-left: auto;
+  font-size: 12px;
+  color: #666;
+}
+
+.terminal-body {
+  padding: 25px;
+}
+
+/* ASCII艺术 */
+.ascii-art {
+  font-size: 8px;
+  line-height: 1;
+  text-align: center;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 480px) {
+  .ascii-art {
+    font-size: 5px;
+  }
+}
+
+/* 标语 */
+.tagline {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tagline p {
+  font-size: 16px;
+  letter-spacing: 8px;
+}
+
+.tagline .sub {
+  font-size: 12px;
+  color: #00aa00;
+  letter-spacing: 6px;
+  margin-top: 5px;
+}
+
+/* 分隔线 */
+.divider {
+  color: #333;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 10px;
+}
+
+/* 登录区域 */
+.login-section {
+  text-align: center;
+}
+
+.prompt {
+  font-size: 12px;
+  color: #00aa00;
+  margin-bottom: 5px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #000;
+  border: 1px solid #00ff00;
+  margin: 20px 0;
+}
+
+.input-group .prefix {
+  padding: 12px;
+  color: #00aa00;
+  font-size: 12px;
+  border-right: 1px solid #333;
+  white-space: nowrap;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  color: #00ff00;
+  font-family: inherit;
+  font-size: 16px;
+  outline: none;
+}
+
+.input-group input::placeholder {
+  color: #006600;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background: transparent;
+  border: 2px solid #00ff00;
+  color: #00ff00;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+  letter-spacing: 3px;
+}
+
+button:hover {
+  background: #00ff00;
+  color: #000;
+}
+
+#error-msg {
+  color: #ff0000;
+  margin-top: 15px;
+  min-height: 20px;
+  font-size: 12px;
+}
+
+/* 页脚信息 */
+.footer-info {
+  font-size: 11px;
+  color: #006600;
+}
+
+.footer-info p {
+  margin: 3px 0;
+}
+
+.footer-info .status {
+  color: #00ff00;
+}
+
+/* 抖动效果 */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-3px); }
+  20%, 40%, 60%, 80% { transform: translateX(3px); }
+}
+
+.shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+/* 故障效果 */
+@keyframes glitch {
+  0% { transform: translate(0); clip-path: inset(0 0 0 0); }
+  5% { transform: translate(-3px, 2px); clip-path: inset(20% 0 60% 0); }
+  10% { transform: translate(3px, -2px); clip-path: inset(50% 0 30% 0); }
+  15% { transform: translate(0); clip-path: inset(0 0 0 0); }
+  100% { transform: translate(0); clip-path: inset(0 0 0 0); }
+}
+
+.glitch {
+  animation: glitch 0.3s ease-in-out 2;
+}
+
+/* ============== 文章列表页 ============== */
+
+.posts-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.posts-header {
+  border-bottom: 2px solid #00ff00;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+}
+
+.posts-header h1 {
+  font-size: 20px;
+  color: #00ff00;
+}
+
+.posts-header .welcome {
+  font-size: 12px;
+  color: #00aa00;
+  margin-top: 5px;
+}
+
+.post-list {
+  list-style: none;
+}
+
+.post-item {
+  display: block;
+  padding: 20px;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  background: #111;
+  text-decoration: none;
+  color: #00ff00;
+  transition: all 0.2s;
+}
+
+.post-item:hover {
+  border-color: #00ff00;
+  background: #1a1a1a;
+}
+
+.post-item.pinned {
+  border-color: #ffaa00;
+}
+
+.post-item.pinned .post-tag {
+  color: #ffaa00;
+}
+
+.post-meta {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.post-title {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.post-preview {
+  font-size: 13px;
+  color: #008800;
+}
+
+.post-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 10px;
+  border: 1px solid currentColor;
+  margin-left: 10px;
+}
+
+/* ============== 文章详情页 ============== */
+
+.article-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.article-header {
+  border-bottom: 1px solid #00ff00;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+.article-header h1 {
+  font-size: 22px;
+  color: #00ff00;
+  margin-bottom: 10px;
+}
+
+.article-meta {
+  font-size: 12px;
+  color: #00aa00;
+}
+
+.article-body {
+  line-height: 2;
+  font-size: 14px;
+}
+
+.article-body p {
+  margin: 15px 0;
+}
+
+.article-body .highlight {
+  color: #ffaa00;
+  background: rgba(255, 170, 0, 0.1);
+  padding: 2px 5px;
+}
+
+.article-body .danger {
+  color: #ff0000;
+}
+
+.article-body .section-break {
+  color: #333;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.article-body blockquote {
+  border-left: 3px solid #00ff00;
+  padding-left: 15px;
+  margin: 20px 0;
+  color: #00aa00;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  background: #00ff00;
+  color: #000;
+}
+
+/* 自毁倒计时 */
+.self-destruct {
+  margin-top: 30px;
+  padding: 15px;
+  border: 2px solid #ff0000;
+  background: rgba(255, 0, 0, 0.1);
+  text-align: center;
+}
+
+.self-destruct p {
+  color: #ff0000;
+  font-size: 12px;
+}
+
+.countdown {
+  font-size: 24px;
+  color: #ff0000;
+  margin-top: 10px;
+  font-weight: bold;
+}

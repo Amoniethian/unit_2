@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CORPMAIL - 邮件详情</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    if (sessionStorage.getItem('mail-auth') !== 'true') {
+      window.location.href = 'index.html';
+    }
+  </script>
+</head>
+<body class="crt">
+  <div class="mail-detail">
+    <div class="mail-detail-header">
+      <h2 class="mail-detail-subject">工伤赔偿事宜 - 最终通知</h2>
+      <div class="mail-detail-meta">
+        <p><strong>发件人:</strong> hr@corp-internal.net</p>
+        <p><strong>收件人:</strong> user_4712@corp-internal.net</p>
+        <p><strong>日期:</strong> 2019-11-21 09:15:33</p>
+        <p><strong>状态:</strong> 已读</p>
+      </div>
+    </div>
+
+    <div class="mail-detail-body">
+您好，
+
+关于2019年9月17日发生的事故，公司已完成内部调查。
+
+根据调查结果，您的工伤赔偿申请已被【驳回】。
+
+理由如下：
+1. 事故发生时您不在授权工作区域
+2. 事故时间超出正常工作时间
+3. 无法证明事故与工作存在直接因果关系
+
+如有异议，请于收到本邮件后7个工作日内向法务部门提出书面申诉。
+逾期将视为接受本决定。
+
+如有疑问，请联系法务部门。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+※ 此邮件由系统自动发送，请勿回复
+※ This is an automated message, please do not reply
+
+CORP INTERNAL - Human Resources Department
+    </div>
+
+    <a href="inbox.html" class="back-btn">← 返回收件箱</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

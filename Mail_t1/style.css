@@ -1,0 +1,348 @@
+/* 基础重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 深网/黑客美学 */
+body {
+  background: #0a0a0a;
+  color: #00ff00;
+  font-family: 'Courier New', Monaco, monospace;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* CRT扫描线效果 */
+.crt::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* 容器 */
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* 登录框 */
+.login-box {
+  background: rgba(0, 20, 0, 0.8);
+  border: 2px solid #00ff00;
+  padding: 30px;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+}
+
+/* ASCII Logo */
+.ascii-logo {
+  font-size: 8px;
+  line-height: 1;
+  color: #00ff00;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 480px) {
+  .ascii-logo {
+    font-size: 5px;
+  }
+}
+
+/* 头部 */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+.subtitle {
+  color: #00cc00;
+  font-size: 14px;
+}
+
+.version {
+  color: #008800;
+  font-size: 11px;
+  margin-top: 10px;
+}
+
+/* 表单 */
+.login-form {
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 5px;
+  color: #00cc00;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  background: #000;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  font-family: inherit;
+  font-size: 16px; /* 防止iOS自动缩放 */
+  outline: none;
+}
+
+input:focus {
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+input::placeholder {
+  color: #006600;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background: transparent;
+  border: 2px solid #00ff00;
+  color: #00ff00;
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #00ff00;
+  color: #000;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* 错误信息 */
+#error {
+  color: #ff0000;
+  text-align: center;
+  margin-top: 15px;
+  min-height: 20px;
+  text-shadow: 0 0 10px #ff0000;
+}
+
+/* 警告 */
+.warning {
+  text-align: center;
+  font-size: 11px;
+  color: #ffaa00;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+}
+
+/* 抖动效果 */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* 故障效果 */
+@keyframes glitch {
+  0% { transform: translate(0); filter: hue-rotate(0deg); }
+  10% { transform: translate(-2px, 2px); }
+  20% { transform: translate(2px, -2px); filter: hue-rotate(90deg); }
+  30% { transform: translate(-2px, -2px); }
+  40% { transform: translate(2px, 2px); filter: hue-rotate(180deg); }
+  50% { transform: translate(0); }
+  100% { transform: translate(0); filter: hue-rotate(0deg); }
+}
+
+.glitch {
+  animation: glitch 0.3s ease-in-out;
+}
+
+/* ============== 收件箱页面样式 ============== */
+
+.inbox-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.inbox-header {
+  border-bottom: 2px solid #00ff00;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.inbox-header h1 {
+  font-size: 20px;
+}
+
+.inbox-header .user-info {
+  font-size: 12px;
+  color: #00aa00;
+}
+
+.folder-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.folder-tab {
+  padding: 8px 15px;
+  border: 1px solid #00ff00;
+  background: transparent;
+  color: #00ff00;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.folder-tab.active,
+.folder-tab:hover {
+  background: #00ff00;
+  color: #000;
+}
+
+.mail-list {
+  border: 1px solid #00ff00;
+}
+
+.mail-item {
+  display: block;
+  padding: 15px;
+  border-bottom: 1px solid #004400;
+  text-decoration: none;
+  color: #00ff00;
+  transition: background 0.2s;
+}
+
+.mail-item:last-child {
+  border-bottom: none;
+}
+
+.mail-item:hover {
+  background: rgba(0, 255, 0, 0.1);
+}
+
+.mail-item.unread {
+  background: rgba(0, 255, 0, 0.05);
+}
+
+.mail-item.unread .mail-subject {
+  font-weight: bold;
+}
+
+.mail-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #00aa00;
+  margin-bottom: 5px;
+}
+
+.mail-subject {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.mail-preview {
+  font-size: 12px;
+  color: #008800;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mail-status {
+  font-size: 10px;
+}
+
+.mail-status.important {
+  color: #ffaa00;
+}
+
+/* ============== 邮件详情页样式 ============== */
+
+.mail-detail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.mail-detail-header {
+  border-bottom: 1px solid #00ff00;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.mail-detail-subject {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.mail-detail-meta {
+  font-size: 12px;
+  color: #00aa00;
+}
+
+.mail-detail-meta p {
+  margin: 5px 0;
+}
+
+.mail-detail-body {
+  padding: 20px 0;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.mail-detail-body a {
+  color: #00ffff;
+  text-decoration: underline;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.back-btn:hover {
+  background: #00ff00;
+  color: #000;
+}

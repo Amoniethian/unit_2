@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CORPMAIL - 邮件详情</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    if (sessionStorage.getItem('mail-auth') !== 'true') {
+      window.location.href = 'index.html';
+    }
+  </script>
+</head>
+<body class="crt">
+  <div class="mail-detail">
+    <div class="mail-detail-header">
+      <h2 class="mail-detail-subject">【紧急】您的人寿保险受益人变更确认 [垃圾邮件]</h2>
+      <div class="mail-detail-meta">
+        <p><strong>发件人:</strong> no-reply@insurance-claim.net</p>
+        <p><strong>收件人:</strong> user_4712@corp-internal.net</p>
+        <p><strong>日期:</strong> 2019-11-20 11:05:43</p>
+        <p><strong>状态:</strong> 垃圾邮件</p>
+      </div>
+    </div>
+
+    <div class="mail-detail-body">
+尊敬的客户，
+
+您于2019年11月19日申请变更人寿保险受益人。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+变更详情
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+保单号: LI-2017-****-4712
+原受益人: [已删除]
+新受益人: <span style="color:#ffaa00">林 XX</span>
+与投保人关系: <span style="color:#ffaa00">同事</span>
+
+变更生效日期: 2019-11-20
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+如非本人操作，请立即联系客服热线：
+400-XXX-XXXX
+
+或登录官网进行身份验证。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+此邮件由系统自动发送，请勿回复。
+
+LIFE INSURANCE CORP.
+    </div>
+
+    <a href="inbox.html" class="back-btn">← 返回收件箱</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
