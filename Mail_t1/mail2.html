@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CORPMAIL - 邮件详情</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    if (sessionStorage.getItem('mail-auth') !== 'true') {
+      window.location.href = 'index.html';
+    }
+  </script>
+</head>
+<body class="crt">
+  <div class="mail-detail">
+    <div class="mail-detail-header">
+      <h2 class="mail-detail-subject">⭐ 他们在骗你</h2>
+      <div class="mail-detail-meta">
+        <p><strong>发件人:</strong> anonymous_4521@protonmail.com</p>
+        <p><strong>收件人:</strong> user_4712@corp-internal.net</p>
+        <p><strong>日期:</strong> 2019-11-22 02:33:17</p>
+        <p><strong>状态:</strong> 未读 ⭐ 重要</p>
+      </div>
+    </div>
+
+    <div class="mail-detail-body">
+我知道你是谁。
+我知道那天发生了什么。
+
+他们删除了Wiki上的真实记录，但我保存了。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+访问: <a href="../Web_T1/index.html" target="_blank">wiki.corp-internal.net</a>
+
+搜索: "Project Monarch 事故报告"
+
+查看【编辑历史】第3版
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+不要相信官方的版本。
+真相就在那里。
+
+你只需要找到它。
+
+——一个不想看你死的人
+    </div>
+
+    <a href="inbox.html" class="back-btn">← 返回收件箱</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

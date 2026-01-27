@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CORPWIKI - Internal Knowledge Base</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wiki-container">
+    <header class="wiki-header">
+      <div class="logo">
+        <h1>CORPWIKI</h1>
+        <span class="tagline">Internal Knowledge Base</span>
+      </div>
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="搜索文章..." value="Project Monarch 事故报告">
+        <button onclick="search()">搜索</button>
+      </div>
+    </header>
+
+    <nav class="wiki-nav">
+      <span>首页</span> &gt;
+      <span>事故报告</span> &gt;
+      <span class="current">Project Monarch 事故报告</span>
+    </nav>
+
+    <main class="wiki-content">
+      <div class="article-warning">
+        <p>⚠ 此页面已被锁定编辑</p>
+        <p>最后修改: 2019-09-20 by admin</p>
+      </div>
+
+      <article>
+        <h1>Project Monarch 事故报告</h1>
+
+        <div class="article-meta">
+          <span>创建时间: 2019-09-16</span>
+          <span>分类: 安全事故</span>
+          <span>状态: 已归档</span>
+        </div>
+
+        <section>
+          <h2>基本信息</h2>
+          <table class="info-table">
+            <tr>
+              <td>事故日期</td>
+              <td>2019年9月15日</td>
+            </tr>
+            <tr>
+              <td>事故地点</td>
+              <td>8楼设备间</td>
+            </tr>
+            <tr>
+              <td>伤亡人数</td>
+              <td>3人死亡，0人受伤</td>
+            </tr>
+            <tr>
+              <td>事故类型</td>
+              <td>电气火灾</td>
+            </tr>
+          </table>
+        </section>
+
+        <section>
+          <h2>事故经过</h2>
+          <p>当晚20:30左右，三名员工（陈伟、张明、李芳）在8楼设备间进行设备维护时，因操作不当导致电气火灾。三人当场死亡。</p>
+          <p>安保人员于20:55发现火情并报警。消防人员于21:15抵达现场，火情于21:40得到控制。</p>
+        </section>
+
+        <section>
+          <h2>调查结论</h2>
+          <p>此次事故系操作人员违规作业所致，公司无过失责任。</p>
+          <p>相关安全培训已于2019年9月25日完成整改。</p>
+        </section>
+
+        <section>
+          <h2>参考资料</h2>
+          <ul>
+            <li>消防部门事故报告 (外部链接已失效)</li>
+            <li>内部安全审计报告 (权限受限)</li>
+          </ul>
+        </section>
+      </article>
+
+      <div class="article-actions">
+        <button onclick="viewHistory()">📜 查看编辑历史</button>
+        <button onclick="viewDiscussion()">💬 查看讨论页</button>
+      </div>
+
+      <footer class="article-footer">
+        <p>页面保护中 - 如需编辑请联系管理员</p>
+        <p>本页面最后编辑于 2019年9月20日 (三) 14:22</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

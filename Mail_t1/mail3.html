@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CORPMAIL - 邮件详情</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    if (sessionStorage.getItem('mail-auth') !== 'true') {
+      window.location.href = 'index.html';
+    }
+  </script>
+</head>
+<body class="crt">
+  <div class="mail-detail">
+    <div class="mail-detail-header">
+      <h2 class="mail-detail-subject">RE: 今晚的聚会</h2>
+      <div class="mail-detail-meta">
+        <p><strong>发件人:</strong> chen.wei@corp-internal.net</p>
+        <p><strong>收件人:</strong> user_4712@corp-internal.net</p>
+        <p><strong>日期:</strong> 2019-09-15 17:42:08</p>
+        <p><strong>状态:</strong> 已读</p>
+      </div>
+    </div>
+
+    <div class="mail-detail-body">
+收到！我带酒，你带蛋糕。
+
+老地方见，8楼天台。
+
+P.S. 别告诉老板，他最近查得紧 😂
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+> -----原始邮件-----
+> 发件人: user_4712@corp-internal.net
+> 发送时间: 2019-09-15 16:30
+> 主题: 今晚的聚会
+>
+> 今天是你生日，下班后聚一下？
+> 张明和李芳也说要来。
+    </div>
+
+    <a href="inbox.html" class="back-btn">← 返回收件箱</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

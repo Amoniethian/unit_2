@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CORPMAIL - Inbox</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // 页面保护 - 必须先登录
+    if (sessionStorage.getItem('mail-auth') !== 'true') {
+      window.location.href = 'index.html';
+    }
+  </script>
+</head>
+<body class="crt">
+  <div class="inbox-container">
+    <div class="inbox-header">
+      <h1>CORPMAIL™ - 收件箱</h1>
+      <p class="user-info">
+        登录用户: <span id="current-user">user_4712</span> |
+        最后同步: 2019-11-23 03:47 |
+        <a href="#" onclick="logout()" style="color:#ff6600;">[ 登出 ]</a>
+      </p>
+    </div>
+
+    <div class="folder-tabs">
+      <button class="folder-tab active" onclick="switchFolder('all')">全部 (7)</button>
+      <button class="folder-tab" onclick="switchFolder('inbox')">收件箱 (4)</button>
+      <button class="folder-tab" onclick="switchFolder('draft')">草稿箱 (1)</button>
+      <button class="folder-tab" onclick="switchFolder('trash')">已删除 (1)</button>
+      <button class="folder-tab" onclick="switchFolder('spam')">垃圾邮件 (1)</button>
+    </div>
+
+    <div class="mail-list">
+      <!-- 邮件#7 - 警告 -->
+      <a href="mail7.html" class="mail-item unread" data-folder="inbox">
+        <div class="mail-meta">
+          <span>wang.lei@corp-internal.net</span>
+          <span>2019-11-22</span>
+        </div>
+        <div class="mail-subject">警告</div>
+        <div class="mail-preview">你以为删掉那段录像就没事了？我全都知道...</div>
+        <div class="mail-status important">⭐ 已标记</div>
+      </a>
+
+      <!-- 邮件#2 - 他们在骗你 -->
+      <a href="mail2.html" class="mail-item unread" data-folder="inbox">
+        <div class="mail-meta">
+          <span>anonymous_4521@protonmail.com</span>
+          <span>2019-11-22</span>
+        </div>
+        <div class="mail-subject">他们在骗你</div>
+        <div class="mail-preview">我知道你是谁。我知道那天发生了什么...</div>
+        <div class="mail-status important">⭐ 重要</div>
+      </a>
+
+      <!-- 邮件#1 - 工伤赔偿 -->
+      <a href="mail1.html" class="mail-item" data-folder="inbox">
+        <div class="mail-meta">
+          <span>hr@corp-internal.net</span>
+          <span>2019-11-21</span>
+        </div>
+        <div class="mail-subject">工伤赔偿事宜 - 最终通知</div>
+        <div class="mail-preview">关于2019年9月17日发生的事故，公司已完成内部调查...</div>
+        <div class="mail-status">已读</div>
+      </a>
+
+      <!-- 邮件#6 - 保险 -->
+      <a href="mail6.html" class="mail-item" data-folder="spam">
+        <div class="mail-meta">
+          <span>no-reply@insurance-claim.net</span>
+          <span>2019-11-20</span>
+        </div>
+        <div class="mail-subject">【紧急】您的人寿保险受益人变更确认</div>
+        <div class="mail-preview">您于2019年11月19日申请变更受益人...</div>
+        <div class="mail-status">垃圾邮件</div>
+      </a>
+
+      <!-- 邮件#4 - 草稿 -->
+      <a href="mail4.html" class="mail-item" data-folder="draft">
+        <div class="mail-meta">
+          <span>草稿 - 未发送</span>
+          <span>2019-11-23 03:47</span>
+        </div>
+        <div class="mail-subject">我必须说出真相</div>
+        <div class="mail-preview">我不能再这样了。那天晚上的事情，不是意外...</div>
+        <div class="mail-status">草稿</div>
+      </a>
+
+      <!-- 邮件#5 - 监控录像 -->
+      <a href="mail5.html" class="mail-item" data-folder="trash">
+        <div class="mail-meta">
+          <span>security@corp-internal.net</span>
+          <span>2019-09-18</span>
+        </div>
+        <div class="mail-subject">监控录像调取申请 - 已批准</div>
+        <div class="mail-preview">您申请调取的以下录像已准备就绪...</div>
+        <div class="mail-status">已删除</div>
+      </a>
+
+      <!-- 邮件#3 - 聚会 -->
+      <a href="mail3.html" class="mail-item" data-folder="inbox">
+        <div class="mail-meta">
+          <span>chen.wei@corp-internal.net</span>
+          <span>2019-09-15</span>
+        </div>
+        <div class="mail-subject">RE: 今晚的聚会</div>
+        <div class="mail-preview">收到！我带酒，你带蛋糕。老地方见，8楼天台...</div>
+        <div class="mail-status">已读</div>
+      </a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // 显示当前用户
+    const user = sessionStorage.getItem('mail-user') || 'user_4712';
+    document.getElementById('current-user').textContent = user;
+  </script>
+</body>
+</html>
